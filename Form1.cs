@@ -206,5 +206,43 @@ namespace l_kursh
                 MessageBox.Show("Дочерняя форма не выбрана");
 
         }
+
+        private void DeleteKnot_Click(object sender, EventArgs e)
+        {
+            Form active = this.ActiveMdiChild;
+            if (active != null)
+            {
+                try
+                {
+                    TreeView box = (TreeView)active.ActiveControl;
+                    TreeNode SelectedNode = box.SelectedNode;
+                    SelectedNode.Nodes.Remove(SelectedNode);
+                }
+                catch
+                {
+                    MessageBox.Show("Узел не выбран!");
+                }
+            }
+        }
+
+        private void ChildKnot_Click(object sender, EventArgs e)
+        {
+            Form active = this.ActiveMdiChild;
+            if (active != null)
+            {
+
+                TreeNode newChildNode = new TreeNode("Test");
+                try
+                {
+                    TreeView all = (TreeView)active.ActiveControl;
+                    TreeNode SelectedNode = all.SelectedNode;
+                    SelectedNode.Nodes.Add(newChildNode);
+                }
+                catch
+                {
+                    MessageBox.Show("Узел не выбран!");
+                }
+            }
+        }
     }
 }

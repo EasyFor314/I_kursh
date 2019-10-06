@@ -73,21 +73,21 @@
             // ToolStripFileCreate
             // 
             this.ToolStripFileCreate.Name = "ToolStripFileCreate";
-            this.ToolStripFileCreate.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripFileCreate.Size = new System.Drawing.Size(132, 22);
             this.ToolStripFileCreate.Text = "Создать";
             this.ToolStripFileCreate.Click += new System.EventHandler(this.ToolStripFileCreate_Click);
             // 
             // ToolStripFileOpen
             // 
             this.ToolStripFileOpen.Name = "ToolStripFileOpen";
-            this.ToolStripFileOpen.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripFileOpen.Size = new System.Drawing.Size(132, 22);
             this.ToolStripFileOpen.Text = "Открыть";
             this.ToolStripFileOpen.Click += new System.EventHandler(this.ToolStripFileOpen_Click);
             // 
             // ToolStripSaveFile
             // 
             this.ToolStripSaveFile.Name = "ToolStripSaveFile";
-            this.ToolStripSaveFile.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripSaveFile.Size = new System.Drawing.Size(132, 22);
             this.ToolStripSaveFile.Text = "Сохранить";
             this.ToolStripSaveFile.Click += new System.EventHandler(this.ToolStripSaveFile_Click);
             // 
@@ -118,7 +118,7 @@
             // ParentKnot
             // 
             this.ParentKnot.Name = "ParentKnot";
-            this.ParentKnot.Size = new System.Drawing.Size(180, 22);
+            this.ParentKnot.Size = new System.Drawing.Size(178, 22);
             this.ParentKnot.Text = "Родительский узел";
             this.ParentKnot.Click += new System.EventHandler(this.ParentKnot_Click);
             // 
@@ -127,6 +127,7 @@
             this.ChildKnot.Name = "ChildKnot";
             this.ChildKnot.Size = new System.Drawing.Size(180, 22);
             this.ChildKnot.Text = "Дочерний узел";
+            this.ChildKnot.Click += new System.EventHandler(this.ChildKnot_Click);
             // 
             // DeleteKnot
             // 
@@ -136,6 +137,7 @@
             this.DeleteKnot.Name = "DeleteKnot";
             this.DeleteKnot.Size = new System.Drawing.Size(23, 22);
             this.DeleteKnot.Text = "Delete";
+            this.DeleteKnot.Click += new System.EventHandler(this.DeleteKnot_Click);
             // 
             // EditKnot
             // 
