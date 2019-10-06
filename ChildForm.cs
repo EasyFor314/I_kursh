@@ -16,5 +16,9 @@ namespace l_kursh
         {
             InitializeComponent();
         }
+        public void Load_file()
+        {
+
+        }
     }
 }

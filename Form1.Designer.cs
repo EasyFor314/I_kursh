@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripFile = new System.Windows.Forms.ToolStripDropDownButton();
             this.ToolStripFileCreate = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripFileOpen = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.ToolStripSaveFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.AddKnot = new System.Windows.Forms.ToolStripDropDownButton();
             this.ParentKnot = new System.Windows.Forms.ToolStripMenuItem();
             this.ChildKnot = new System.Windows.Forms.ToolStripMenuItem();
             this.DeleteKnot = new System.Windows.Forms.ToolStripButton();
             this.EditKnot = new System.Windows.Forms.ToolStripButton();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.toolStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -56,18 +56,6 @@
             this.toolStrip2.TabIndex = 1;
             this.toolStrip2.Text = "toolStrip2";
             this.toolStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip2_ItemClicked_1);
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AddKnot,
-            this.DeleteKnot,
-            this.EditKnot});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 25);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
-            this.toolStrip1.TabIndex = 2;
-            this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripFile
             // 
@@ -87,22 +75,33 @@
             this.ToolStripFileCreate.Name = "ToolStripFileCreate";
             this.ToolStripFileCreate.Size = new System.Drawing.Size(180, 22);
             this.ToolStripFileCreate.Text = "Создать";
+            this.ToolStripFileCreate.Click += new System.EventHandler(this.ToolStripFileCreate_Click);
             // 
             // ToolStripFileOpen
             // 
             this.ToolStripFileOpen.Name = "ToolStripFileOpen";
             this.ToolStripFileOpen.Size = new System.Drawing.Size(180, 22);
             this.ToolStripFileOpen.Text = "Открыть";
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.ToolStripFileOpen.Click += new System.EventHandler(this.ToolStripFileOpen_Click);
             // 
             // ToolStripSaveFile
             // 
             this.ToolStripSaveFile.Name = "ToolStripSaveFile";
             this.ToolStripSaveFile.Size = new System.Drawing.Size(180, 22);
             this.ToolStripSaveFile.Text = "Сохранить";
+            this.ToolStripSaveFile.Click += new System.EventHandler(this.ToolStripSaveFile_Click);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AddKnot,
+            this.DeleteKnot,
+            this.EditKnot});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 25);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
+            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Text = "toolStrip1";
             // 
             // AddKnot
             // 
@@ -121,6 +120,7 @@
             this.ParentKnot.Name = "ParentKnot";
             this.ParentKnot.Size = new System.Drawing.Size(180, 22);
             this.ParentKnot.Text = "Родительский узел";
+            this.ParentKnot.Click += new System.EventHandler(this.ParentKnot_Click);
             // 
             // ChildKnot
             // 
@@ -145,6 +145,15 @@
             this.EditKnot.Name = "EditKnot";
             this.EditKnot.Size = new System.Drawing.Size(23, 22);
             this.EditKnot.Text = "Edit";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.OpenFileDialog1_FileOk);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.SaveFileDialog1_FileOk);
             // 
             // MainForm
             // 
