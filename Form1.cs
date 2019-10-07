@@ -197,6 +197,7 @@ namespace l_kursh
         }
         private void ToolStripSaveFile_Click(object sender, EventArgs e)
         {
+            saveFileDialog1.FileName = null;
             Form active = this.ActiveMdiChild;
             if (active != null)
             {
