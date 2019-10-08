@@ -191,6 +191,7 @@ namespace l_kursh
                 else //No child nodes, so we just write the text
                 {
                     sr.WriteLine("<" + node.Text + ">");
+                    saveNode(node.Nodes);
                     sr.WriteLine("</" + node.Text + ">");
                 }
             }
@@ -244,6 +245,11 @@ namespace l_kursh
                     MessageBox.Show("Узел не выбран!");
                 }
             }
+        }
+
+        private void EditKnot_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
