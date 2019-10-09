@@ -54,7 +54,12 @@ namespace l_kursh
             if(active != null)
             {
 
-                TreeNode newParentNode = new TreeNode("Test");
+                TreeNode newParentNode = new TreeNode(textBox1.Text);
+                if (textBox1.TextLength == 0)
+                {
+                    MessageBox.Show("Имя пустое!");
+                    return;
+                }
                 try
                 {
                     TreeView all = (TreeView)active.ActiveControl;
@@ -65,6 +70,7 @@ namespace l_kursh
                     MessageBox.Show("Вызвано исключение");
                 }
             }
+            ParentKnot.Enabled = false;
         }
 
         private void ToolStripFileOpen_Click(object sender, EventArgs e)
@@ -166,13 +172,13 @@ namespace l_kursh
             //Write the header
             sr.WriteLine("<?xml version=\"1.0\" encoding=\"utf-8\" ?>");
             //Write our root node
-            sr.WriteLine("<" + tv.Nodes[0].Text + ">");
-            foreach (TreeNode node in tv.Nodes)
-            {
-                saveNode(node.Nodes);
-            }
-            //Close the root node
-            sr.WriteLine("</" + tv.Nodes[0].Text + ">");
+                sr.WriteLine("<" + tv.Nodes[0].Text + ">");
+                foreach (TreeNode node in tv.Nodes)
+                {
+                    saveNode(node.Nodes);
+                }
+                //Close the root node
+                sr.WriteLine("</" + tv.Nodes[0].Text + ">");
             sr.Close();
         }
         private void saveNode(TreeNodeCollection tnc)
@@ -233,7 +239,12 @@ namespace l_kursh
             if (active != null)
             {
 
-                TreeNode newChildNode = new TreeNode("Test");
+                TreeNode newChildNode = new TreeNode(textBox1.Text);
+                if (textBox1.TextLength == 0)
+                {
+                    MessageBox.Show("Имя пустое!");
+                    return;
+                }
                 try
                 {
                     TreeView all = (TreeView)active.ActiveControl;
@@ -249,7 +260,25 @@ namespace l_kursh
 
         private void EditKnot_Click(object sender, EventArgs e)
         {
-
+            Form active = this.ActiveMdiChild;
+            TreeNode rename = new TreeNode(textBox1.Text);
+            if (textBox1.TextLength == 0)
+            {
+                MessageBox.Show("Имя пустое!");
+                return;
+            }
+            if (active != null)
+            {
+                try
+                {
+                    TreeView all = (TreeView)active.ActiveControl;
+                    all.SelectedNode.Text = rename.Text;
+                }
+                catch
+                {
+                    MessageBox.Show("Узел не выбран!");
+                }
+            }
         }
     }
 }
